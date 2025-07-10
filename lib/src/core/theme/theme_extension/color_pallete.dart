@@ -9,7 +9,7 @@ class AppColor {
   static const Color error = Colors.red;
   static const Color textColor = Colors.black;
   static const Color secondaryTextColor = onSecondary;
-
+  static const Color bottomNavBarIconColor = Color(0xff484C52);
   static const Color surface = Color.fromRGBO(0, 0, 0, 0.50);
   static const Color onSurface = onSecondary;
 

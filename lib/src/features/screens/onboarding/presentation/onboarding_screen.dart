@@ -4,7 +4,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:freshiest_cwash_app/src/core/constant/icons.dart';
 import 'package:freshiest_cwash_app/src/core/constant/images.dart';
 import 'package:freshiest_cwash_app/src/core/constant/padding.dart';
+import 'package:freshiest_cwash_app/src/core/routes/route_constant.dart';
 import 'package:freshiest_cwash_app/src/core/theme/theme_extension/color_pallete.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -19,7 +21,7 @@ class OnboardingScreen extends StatelessWidget {
           padding: AppPadding.horizontalPadding,
           child: Column(
             children: [
-              SizedBox(height: 100.h),
+              Spacer(),
               SvgPicture.asset(AppIcons.nameLogo),
               SizedBox(height: 80.h),
               Image.asset(AppImages.carImage, width: 286.w, height: 228.h),
@@ -49,7 +51,7 @@ class OnboardingScreen extends StatelessWidget {
                     backgroundColor: Colors.white,
                     foregroundColor: AppColor.textColor,
                   ),
-                  onPressed: () {},
+                  onPressed: () => context.go(RouteConst.home),
                   child: Text("Get Started", style: textTheme.titleMedium),
                 ),
               ),

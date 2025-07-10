@@ -16,6 +16,7 @@ class AppInputDecorationTheme {
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(99.r),
+      borderSide: BorderSide.none,
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(99.r),
@@ -24,6 +25,7 @@ class AppInputDecorationTheme {
     errorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(99.r)),
     disabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(99.r),
+      borderSide: BorderSide.none,
     ),
   );
 
