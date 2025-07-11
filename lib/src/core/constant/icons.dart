@@ -9,4 +9,6 @@ class AppIcons {
   static const String user = '$iconPath/user.svg';
   static const String filter = '$iconPath/filter.svg';
   static const String carService = '$iconPath/car_service.svg';
+  static const String washType = '$iconPath/wash_type.svg';
+  static const String chat = '$iconPath/chat.svg';
 }

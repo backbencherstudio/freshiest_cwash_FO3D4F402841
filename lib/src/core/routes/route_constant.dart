@@ -6,5 +6,6 @@ class RouteConst{
   static const String history = '/history';
   static const String user = '/user';
   static const String car = '/car';
+  static const String serviceDetails = '/service-details';
 
 }

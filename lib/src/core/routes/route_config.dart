@@ -4,6 +4,7 @@ import 'package:freshiest_cwash_app/src/features/screens/home/presentation/home_
 import 'package:freshiest_cwash_app/src/features/screens/onboarding/presentation/onboarding_screen.dart';
 import 'package:freshiest_cwash_app/src/features/screens/profile_screens/presentation/profile_screen.dart';
 import 'package:freshiest_cwash_app/src/features/screens/search_screen/presentation/search_screen.dart';
+import 'package:freshiest_cwash_app/src/features/screens/service_details_screen/presentation/service_details_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/common_widgets/bottom_nav_bar/bottom_nav_bar.dart';
 import 'build_page_with_transition.dart';
@@ -72,6 +73,21 @@ class RouteConfig {
           );
         },
       ),
+
+      GoRoute(
+        path: RouteConst.serviceDetails,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideBottomToTop,
+            child: ServiceDetailsScreen(),
+          );
+        },
+      ),
+
+
+
     ],
   );
 }
