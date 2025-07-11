@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:freshiest_cwash_app/src/core/theme/theme_extension/color_pallete.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/constant/icons.dart';
@@ -13,73 +14,90 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: navigationShell,
-      floatingActionButton: ClipRRect(
-        borderRadius: BorderRadius.circular(60.r),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          debugPrint("\n Pressed Center button \n");
+        },
         child: Container(
-          height: 60.h,
-          margin: EdgeInsets.symmetric(horizontal: 81.w),
+          width: 52.w,
+          height: 52.w,
+          padding: EdgeInsets.all(14.r),
           decoration: BoxDecoration(
-            color: Color(0xff070707),
-            borderRadius: BorderRadius.circular(60.r),
+            color: AppColor.primary,
+            shape: BoxShape.circle,
+            border: Border.all(color: AppColor.onPrimary, width: 4.w),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            // children: [
-            //   _buildNavItem(
-            //     index: 0,
-            //     icon: AppIcons.homeSolid,
-            //     outlineIcon: AppIcons.homeOutlined,
-            //     onTap: () => navigationShell.goBranch(0),
-            //   ),
-            //   _buildNavItem(
-            //     index: 1,
-            //     icon: AppIcons.briefcaseSolid,
-            //     outlineIcon: AppIcons.briefcaseOutlined,
-            //     onTap: () => navigationShell.goBranch(1),
-            //   ),
-            //   _buildNavItem(
-            //     index: 2,
-            //     icon: AppIcons.mapSolid,
-            //     outlineIcon: AppIcons.mapOutlined,
-            //     onTap: () => navigationShell.goBranch(2),
-            //   ),
-            //   _buildNavItem(
-            //     index: 3,
-            //     icon: AppIcons.settingSolid,
-            //     outlineIcon: AppIcons.settingOutlined,
-            //     onTap: () => navigationShell.goBranch(3),
-            //   ),
-            // ],
+          child: Center(
+            child: SvgPicture.asset(
+              AppIcons.car,
+              colorFilter: ColorFilter.mode(
+                AppColor.onPrimary,
+                BlendMode.srcIn,
+              ),
+            ),
           ),
         ),
       ),
-    );
-  }
 
-  Widget _buildNavItem({
-    required int index,
-    required String icon,
-    required String outlineIcon,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.all(
-          15.r,
-        ),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: navigationShell.currentIndex == index
-              ? Colors
-                    .white
-              : Colors
-                    .transparent,
-        ),
-        child: SvgPicture.asset(
-          navigationShell.currentIndex == index ? icon : outlineIcon,
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: navigationShell.currentIndex,
+        onTap: (index) => navigationShell.goBranch(index),
+        type: BottomNavigationBarType.fixed,
+        elevation: 10,
+        backgroundColor: AppColor.onPrimary,
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              AppIcons.home,
+              colorFilter: ColorFilter.mode(
+                navigationShell.currentIndex == 0
+                    ? AppColor.primary
+                    : AppColor.bottomNavBarIconColor,
+                BlendMode.srcIn,
+              ),
+            ),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              AppIcons.search,
+              colorFilter: ColorFilter.mode(
+                navigationShell.currentIndex == 1
+                    ? AppColor.primary
+                    : AppColor.bottomNavBarIconColor,
+                BlendMode.srcIn,
+              ),
+            ),
+            label: "Search",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              AppIcons.history,
+              colorFilter: ColorFilter.mode(
+                navigationShell.currentIndex == 2
+                    ? AppColor.primary
+                    : AppColor.bottomNavBarIconColor,
+                BlendMode.srcIn,
+              ),
+            ),
+            label: "History",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              AppIcons.user,
+              colorFilter: ColorFilter.mode(
+                navigationShell.currentIndex == 3
+                    ? AppColor.primary
+                    : AppColor.bottomNavBarIconColor,
+                BlendMode.srcIn,
+              ),
+            ),
+            label: "Profile",
+          ),
+        ],
       ),
     );
   }
