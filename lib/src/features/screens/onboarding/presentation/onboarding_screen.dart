@@ -23,9 +23,9 @@ class OnboardingScreen extends StatelessWidget {
             children: [
               Spacer(),
               SvgPicture.asset(AppIcons.nameLogo),
-              SizedBox(height: 80.h),
+              Spacer(),
               Image.asset(AppImages.carImage, width: 286.w, height: 228.h),
-              SizedBox(height: 40.h),
+              Spacer(),
               Text(
                 "Find Your\nBest Car Wash!",
                 style: textTheme.headlineLarge?.copyWith(
@@ -55,6 +55,7 @@ class OnboardingScreen extends StatelessWidget {
                   child: Text("Get Started", style: textTheme.titleMedium),
                 ),
               ),
+              Spacer(),
             ],
           ),
         ),

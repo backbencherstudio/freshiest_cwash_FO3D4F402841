@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freshiest_cwash_app/src/core/constant/padding.dart';
 import 'package:freshiest_cwash_app/src/core/theme/theme_extension/color_pallete.dart';
+import 'package:freshiest_cwash_app/src/features/screens/search_screen/presentation/widgets/service_station_list.dart';
+import 'package:freshiest_cwash_app/src/features/screens/search_screen/presentation/widgets/service_station_search_bar.dart';
 
 import '../../../common_widgets/notification_button/notification_button.dart';
 
@@ -14,28 +18,24 @@ class SearchScreen extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Positioned.fill(
-            child: DecoratedBox(
-              decoration: BoxDecoration(color: AppColor.primary),
-              child: Row(
+            child:Image.asset('assets/images/map.png',fit:BoxFit.cover,),
+          ),
+          Positioned.fill(child: SafeArea(
+            child: Padding(
+              padding: AppPadding.horizontalPadding,
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  RichText(
-                    text: TextSpan(
-                      text: "Hey, Danial",
-                      style: textTheme.headlineLarge,
-                      children: [
-                        TextSpan(
-                          text: "\nHope you are having a nice day!",
-                          style: textTheme.bodyMedium,
-                        ),
-                      ],
-                    ),
-                  ),
-                  NotificationButton(),
+                  ServiceStationSearchbar(),
+
+                  Spacer(),
+
+                  ServiceStationList(),
+                  SizedBox(height: 60.h,)
                 ],
               ),
             ),
-          ),
+          ),)
         ],
       ),
     );
