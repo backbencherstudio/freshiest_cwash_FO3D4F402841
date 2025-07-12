@@ -7,5 +7,6 @@ class RouteConst{
   static const String user = '/user';
   static const String car = '/car';
   static const String serviceDetails = '/service-details';
+  static const String serviceBookingScreen = '/service-booking-screen';
 
 }

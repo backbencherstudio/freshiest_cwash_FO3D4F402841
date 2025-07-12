@@ -1,4 +1,5 @@
 import 'package:freshiest_cwash_app/src/core/routes/route_constant.dart';
+import 'package:freshiest_cwash_app/src/features/screens/booking_screen/presentation/booking_screen.dart';
 import 'package:freshiest_cwash_app/src/features/screens/history_screens/presentation/history_screen.dart';
 import 'package:freshiest_cwash_app/src/features/screens/home/presentation/home_screen.dart';
 import 'package:freshiest_cwash_app/src/features/screens/onboarding/presentation/onboarding_screen.dart';
@@ -11,7 +12,7 @@ import 'build_page_with_transition.dart';
 
 class RouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: RouteConst.onboardingScreen,
+    initialLocation: RouteConst.serviceBookingScreen,
 
     /// Start at the splash screen
     routes: [
@@ -82,6 +83,18 @@ class RouteConfig {
             state: state,
             transitionType: PageTransitionType.slideBottomToTop,
             child: ServiceDetailsScreen(),
+          );
+        },
+      ),
+
+      GoRoute(
+        path: RouteConst.serviceBookingScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideBottomToTop,
+            child: BookingScreen(),
           );
         },
       ),
