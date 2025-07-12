@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freshiest_cwash_app/src/core/constant/padding.dart';
+import 'package:freshiest_cwash_app/src/features/screens/booking_screen/presentation/widget/booking_confirmation_dialog/booking_confirmation_dialog.dart';
 import 'package:freshiest_cwash_app/src/features/screens/booking_screen/presentation/widget/car_drop_down_button.dart';
 import 'package:freshiest_cwash_app/src/features/screens/booking_screen/presentation/widget/select_order_date_time.dart';
 import 'package:freshiest_cwash_app/src/features/screens/booking_screen/presentation/widget/select_your_order.dart';
@@ -37,7 +38,10 @@ class BookingScreen extends StatelessWidget{
 
               Padding(
                 padding: AppPadding.horizontalPadding,
-                child: ElevatedButton(onPressed: (){}, child: Text("Book a Wash"),),
+                child: ElevatedButton(onPressed: ()async{
+                  await bookingConfirmationDialog(context: context);
+
+                }, child: Text("Book a Wash"),),
               ),
               SizedBox(height: 60.h,),
             ],
