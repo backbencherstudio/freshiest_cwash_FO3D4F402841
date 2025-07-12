@@ -57,7 +57,7 @@ class SuccessfulScreen extends StatelessWidget {
             ),
             SizedBox(height: 22.h),
             TextButton(
-              onPressed: () {},
+              onPressed: ()=>context.pushReplacement(RouteConst.feedbackScreen),
               child: Text(
                 "Feedback",
                 style: textTheme.bodyLarge?.copyWith(

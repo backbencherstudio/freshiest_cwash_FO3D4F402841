@@ -14,7 +14,7 @@ import 'build_page_with_transition.dart';
 
 class RouteConfig {
   GoRouter goRouter = GoRouter(
-    initialLocation: RouteConst.feedbackScreen,
+    initialLocation: RouteConst.onboardingScreen,
 
     /// Start at the splash screen
     routes: [

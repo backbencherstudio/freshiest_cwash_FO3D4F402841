@@ -22,8 +22,8 @@ class FeedbackScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.zero,
+        child: Column(
+          // padding: EdgeInsets.zero,
           // padding: EdgeInsets.zero,
           children: [
             SizedBox(height: 35),
@@ -37,65 +37,68 @@ class FeedbackScreen extends StatelessWidget {
             ),
 
             SizedBox(height: 30),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 32.h),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(16.r),
-                  topRight: Radius.circular(16.r),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 32.h),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16.r),
+                    topRight: Radius.circular(16.r),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.15),
+                      blurRadius: 10.r,
+                      spreadRadius: 10.r,
+                      offset: Offset(2.w, 5.h),
+                    ),
+                  ],
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.15),
-                    blurRadius: 10.r,
-                    spreadRadius: 10.r,
-                    offset: Offset(2.w, 5.h),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("All New Rush", style: textTheme.headlineSmall),
-                          Text(
-                            "SUV",
-                            style: textTheme.bodyMedium?.copyWith(
-                              color: Color(0xff90A3BF),
-                              fontWeight: FontWeight.w600,
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("All New Rush", style: textTheme.headlineSmall),
+                            Text(
+                              "SUV",
+                              style: textTheme.bodyMedium?.copyWith(
+                                color: Color(0xff90A3BF),
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          StarRating(
-                            rating: 5,
-                            allowHalfRating: false,
-                            onRatingChanged: (rating) {},
-                          ),
-                          Text(
-                            "440+ Reviewer",
-                            style: textTheme.bodySmall?.copyWith(
-                              color: Color(0xff90A3BF),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            StarRating(
+                              rating: 5,
+                              allowHalfRating: false,
+                              onRatingChanged: (rating) {},
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 16.h),
-                  Divider(color: AppColor.borderColor),
-                  SizedBox(height: 24.h),
-                  FeedbackFormCard(),
-                ],
+                            Text(
+                              "440+ Reviewer",
+                              style: textTheme.bodySmall?.copyWith(
+                                color: Color(0xff90A3BF),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 16.h),
+                    Divider(color: AppColor.borderColor),
+                    SizedBox(height: 24.h),
+                    FeedbackFormCard(),
+                  ],
+                ),
               ),
             ),
           ],
