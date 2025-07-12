@@ -11,4 +11,5 @@ class AppIcons {
   static const String carService = '$iconPath/car_service.svg';
   static const String washType = '$iconPath/wash_type.svg';
   static const String chat = '$iconPath/chat.svg';
+  static const String successfulMark = '$iconPath/successful_mark.svg';
 }

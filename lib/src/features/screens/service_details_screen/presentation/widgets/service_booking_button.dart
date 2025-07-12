@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:freshiest_cwash_app/src/core/constant/icons.dart';
 import 'package:freshiest_cwash_app/src/core/constant/padding.dart';
+import 'package:freshiest_cwash_app/src/core/routes/route_constant.dart';
+import 'package:go_router/go_router.dart';
 
 class ServiceBookingButton extends StatelessWidget{
   const ServiceBookingButton({super.key});
@@ -21,7 +23,7 @@ class ServiceBookingButton extends StatelessWidget{
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 15.h)
               ),
-              onPressed: (){}, child: Text("Book Now"),),),
+              onPressed: ()=>context.push(RouteConst.serviceBookingScreen), child: Text("Book Now"),),),
           ],
         ),
       ),

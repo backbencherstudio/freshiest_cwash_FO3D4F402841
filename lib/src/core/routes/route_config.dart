@@ -1,4 +1,5 @@
 import 'package:freshiest_cwash_app/src/core/routes/route_constant.dart';
+import 'package:freshiest_cwash_app/src/features/screens/booking_screen/presentation/booking_screen.dart';
 import 'package:freshiest_cwash_app/src/features/screens/history_screens/presentation/history_screen.dart';
 import 'package:freshiest_cwash_app/src/features/screens/home/presentation/home_screen.dart';
 import 'package:freshiest_cwash_app/src/features/screens/onboarding/presentation/onboarding_screen.dart';
@@ -7,6 +8,8 @@ import 'package:freshiest_cwash_app/src/features/screens/search_screen/presentat
 import 'package:freshiest_cwash_app/src/features/screens/service_details_screen/presentation/service_details_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/common_widgets/bottom_nav_bar/bottom_nav_bar.dart';
+import '../../features/screens/booking_screen/presentation/successful_screen/successful_screen.dart';
+import '../../features/screens/feedback_screen/presentation/feedback_screen.dart';
 import 'build_page_with_transition.dart';
 
 class RouteConfig {
@@ -86,6 +89,41 @@ class RouteConfig {
         },
       ),
 
+      GoRoute(
+        path: RouteConst.serviceBookingScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideBottomToTop,
+            child: BookingScreen(),
+          );
+        },
+      ),
+
+      GoRoute(
+        path: RouteConst.successfulScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: SuccessfulScreen(),
+          );
+        },
+      ),
+
+      GoRoute(
+        path: RouteConst.feedbackScreen,
+        pageBuilder: (context, state) {
+          return buildPageWithTransition(
+            context: context,
+            state: state,
+            transitionType: PageTransitionType.slideRightToLeft,
+            child: FeedbackScreen(),
+          );
+        },
+      ),
 
 
     ],
