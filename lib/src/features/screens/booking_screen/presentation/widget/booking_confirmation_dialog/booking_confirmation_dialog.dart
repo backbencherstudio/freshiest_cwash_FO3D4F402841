@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freshiest_cwash_app/src/core/routes/route_constant.dart';
 import 'package:freshiest_cwash_app/src/core/theme/theme_extension/color_pallete.dart';
 import 'package:go_router/go_router.dart';
 
@@ -151,7 +152,7 @@ Future<void> bookingConfirmationDialog({required BuildContext context}) async {
                           ),
                           Expanded(
                             child: ElevatedButton(
-                              onPressed: () => context.pop(),
+                              onPressed: () => context.push(RouteConst.successfulScreen),
                               child: FittedBox(child: Text("Confirm")),
                             ),
                           ),
